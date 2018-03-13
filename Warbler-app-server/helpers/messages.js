@@ -9,4 +9,14 @@ exports.createMessage = function(req,res,next) {
     })
 };
 
+exports.fetchAllMessages = function(req,res,next) {
+    db.Message.find().sort({createdAt: 'desc'})
+    .then(function(message) {
+        res.json(message);
+    })
+    .catch(function(err){
+        res.status(500).json(err);
+    });
+}
+
 module.exports = exports;

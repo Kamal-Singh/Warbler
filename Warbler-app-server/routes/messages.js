@@ -4,4 +4,6 @@ var helpers = require('../helpers/messages.js');
 
 router.post('/', helpers.createMessage);
 
+router.get('/', helpers.fetchAllMessages);
+
 module.exports = router;
