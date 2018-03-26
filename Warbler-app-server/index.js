@@ -13,10 +13,10 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 app.get("/", function(req, res){
-    res.json({message: "Send a POST require to /api/auth/signin"});
+    res.json({message: "Send a POST request to /api/auth/signin"});
 });
 
-app.use('/api/message/', messageRoutes);
+app.use('/api/message', messageRoutes);
 
 app.use('/api/auth', authRoutes);
 
